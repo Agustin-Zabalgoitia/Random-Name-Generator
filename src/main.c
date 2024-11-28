@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "fileManager.h"
-#include "str.h"
-#include "binaryTree.h"
+#include "../include/fileManager.h"
+#include "../include/str.h"
+#include "../include/binaryTree.h"
 
 void showString(void *str)
 {
@@ -13,9 +13,9 @@ void showString(void *str)
 int main()
 {
     //Testing file reader
-    readTextFile("src/names/spanish/first_syllable_spanish.txt",showString);
+    readTextFile("files/names/spanish/first_syllable_spanish.txt",showString);
     printf("\n");
-    readTextFile("src/names/spanish/second_syllable_spanish.txt",showString);
+    readTextFile("files/names/spanish/second_syllable_spanish.txt",showString);
 
     //Testing string concatenation
     char name[20];

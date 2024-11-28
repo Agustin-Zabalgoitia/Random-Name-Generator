@@ -1,4 +1,4 @@
-#include "fileManager.h"
+#include "../include/fileManager.h"
 
 int readTextFile(char *fileName, void (*func)(void *))
 {

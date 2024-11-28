@@ -1,4 +1,4 @@
-#include "binaryTree.h"
+#include "../include/binaryTree.h"
 
 void createTree(BinaryTree *tree)
 {

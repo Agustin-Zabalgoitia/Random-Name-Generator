@@ -1,4 +1,4 @@
-#include "str.h"
+#include "../include/str.h"
 
 void concatenateStrings(const char *str1, const char *str2, char *dest )
 {
