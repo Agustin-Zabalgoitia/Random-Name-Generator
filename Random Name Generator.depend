@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1732814799 source:/home/tiber/Documents/programming/c/Random Name Generator/fileManager.c
+	"fileManager.h"
+
+1732816539 /home/tiber/Documents/programming/c/Random Name Generator/fileManager.h
+	<stdlib.h>
+	<stdio.h>
+
+1732815663 source:/home/tiber/Documents/programming/c/Random Name Generator/str.c
+	"str.h"
+
+1732816066 /home/tiber/Documents/programming/c/Random Name Generator/str.h
+
+1732822594 source:/home/tiber/Documents/programming/c/Random Name Generator/main.c
+	<stdio.h>
+	<stdlib.h>
+	"fileManager.h"
+	"str.h"
+	"binaryTree.h"
+
+1732822314 source:/home/tiber/Documents/programming/c/Random Name Generator/binaryTree.c
+	"binaryTree.h"
+
+1732822334 /home/tiber/Documents/programming/c/Random Name Generator/binaryTree.h
+	<stdio.h>
+	<stdlib.h>
+	"errorNumbers.h"
+
+1732821093 /home/tiber/Documents/programming/c/Random Name Generator/errorNumbers.h
+
+1732822165 source:/home/tiber/Documents/programming/c/Random Name Generator/utils.c
+	"utils.h"
+
+1732822138 /home/tiber/Documents/programming/c/Random Name Generator/utils.h
+	<stdlib.h>
+	"errorNumbers.h"
+
