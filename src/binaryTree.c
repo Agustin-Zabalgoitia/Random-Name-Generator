@@ -41,7 +41,7 @@ int insertIntoTree(BinaryTree *tree, const void *data, unsigned dataSize
     if(!allocateNodeMemory(newNode, sizeof(newNode), newNode->data, dataSize))
         return OUT_OF_MEMORY;
 
-    memcpy(newNode->data, data, dataSize);
+    copyMemory(newNode->data, data, dataSize);
     newNode->dataSize = dataSize;
     newNode->left = newNode->right = NULL;
     *tree = newNode;
