@@ -2,7 +2,7 @@
 #define LIST_H_INCLUDED
 
 #include <stdlib.h>
-#include "utils.h"
+#include "str.h"
 #include "errorNumbers.h"
 
 typedef struct sListNode

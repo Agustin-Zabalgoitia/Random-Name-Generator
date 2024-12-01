@@ -8,6 +8,6 @@
 * Reads a text file. For each line of the text file, it calls the given function
 * passing it as an argument the line itself.
 **/
-int readTextFile(char *, void (*)(void *));
+int readTextFile(char *, void (*)(void *, void *), void *);
 
 #endif // FILEMANAGER_H_INCLUDED

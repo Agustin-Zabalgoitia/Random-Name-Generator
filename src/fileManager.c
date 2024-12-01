@@ -1,6 +1,6 @@
 #include "../include/fileManager.h"
 
-int readTextFile(char *fileName, void (*func)(void *))
+int readTextFile(char *fileName, void (*func)(void *, void *), void *param)
 {
     char line[100];
     FILE *fp = fopen(fileName, "rt");
@@ -10,7 +10,7 @@ int readTextFile(char *fileName, void (*func)(void *))
 
     while(fgets(line, sizeof(line), fp))
     {
-        func(line);
+        func(line, param);
     }
 
     fclose(fp);

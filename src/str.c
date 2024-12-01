@@ -19,3 +19,21 @@ int compareString(const char *str1, const char *str2)
 
     return (int) (*str1 - *str2);
 }
+
+unsigned stringLength(const char *str)
+{
+    unsigned length = 0;
+
+    while(*str++)
+        length++;
+
+    return length;
+}
+
+void copyMemory(void* dest,const void* src, size_t size)
+{
+    char *d = dest;
+    const char *s = src;
+    while(size--)
+        *d++ = *s++;
+}

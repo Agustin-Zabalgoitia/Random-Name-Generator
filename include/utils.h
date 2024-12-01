@@ -3,7 +3,12 @@
 
 #include <stdlib.h>
 #include "errorNumbers.h"
+#include "str.h"
+#include "list.h"
 
-void copyMemory(void *, const void*, size_t);
+/**
+* Given a path, loads a text file to a given list
+**/
+void loadTextFileToList(const  char *path, LinkedList *list);
 
 #endif // UTILS_H_INCLUDED
