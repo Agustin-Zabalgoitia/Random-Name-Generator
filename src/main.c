@@ -5,8 +5,9 @@
 #include "../include/str.h"
 #include "../include/binaryTree.h"
 #include "../include/list.h"
+#include "../include/utils.h"
 
-void showString(void *str)
+void showString(void *str, void* nothing)
 {
     printf("%s", (char*) str);
 }
@@ -14,14 +15,16 @@ void showString(void *str)
 int main()
 {
     //Testing file reader
-    readTextFile("files/names/spanish/first_syllable_spanish.txt",showString);
+    readTextFile("files/names/spanish/first_syllable_spanish.txt"
+                 ,showString, NULL);
     printf("\n");
-    readTextFile("files/names/spanish/second_syllable_spanish.txt",showString);
+    readTextFile("files/names/spanish/second_syllable_spanish.txt"
+                 ,showString, NULL);
 
     //Testing string concatenation
     char name[20];
     concatenateStrings("A", "gus", name);
-    showString(name);
+    showString(name, NULL);
 
     //Testing string comparator
     printf("%d\n", compareString("A","A"));
@@ -44,6 +47,12 @@ int main()
     addItem(&list, (void *) &intAux, sizeof(unsigned));
     intAux = 3;
     addItem(&list, (void *) &intAux, sizeof(unsigned));
+
+    //Testing text file to list
+    LinkedList syllables;
+    createList(&syllables);
+    loadTextFileToList("files/names/spanish/first_syllable_spanish.txt"
+                       , &syllables);
 
     return 0;
 }

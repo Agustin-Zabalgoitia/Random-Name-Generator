@@ -2,7 +2,7 @@
 #define BINARYTREE_H_INCLUDED
 
 #include <stdlib.h>
-#include "utils.h"
+#include "str.h"
 #include "errorNumbers.h"
 
 #define allocateNodeMemory( X , Y , Z , W ) (                       \

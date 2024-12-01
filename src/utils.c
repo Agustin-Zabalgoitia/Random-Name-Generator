@@ -1,9 +1,12 @@
 #include "../include/utils.h"
 
-void copyMemory(void* dest,const void* src, size_t size)
+void loadTextToList(void *text, void *list)
 {
-    char *d = dest;
-    const char *s = src;
-    while(size--)
-        *d++ = *s++;
+    unsigned length = stringLength((const char*)text);
+    addItem((LinkedList *) list, text, sizeof(char)*length);
+}
+
+void loadTextFileToList(const  char *filename, LinkedList *list)
+{
+    readTextFile(filename, loadTextToList, list);
 }

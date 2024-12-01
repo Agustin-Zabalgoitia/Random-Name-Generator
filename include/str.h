@@ -1,6 +1,8 @@
 #ifndef STR_H_INCLUDED
 #define STR_H_INCLUDED
 
+#include <stdlib.h>
+
 /**
 * This function concatenates the contents of two string pointers and returns the
 * result on dest.
@@ -15,5 +17,10 @@ void concatenateStrings(const char *str1, const char *str2, char *dest);
 * It returns a positive value if str1 appears after str2 in lexografical order.
 **/
 int compareString(const char *str1, const char *str2);
+/**
+* Returns the length of a given string
+**/
+unsigned stringLength(const char *str);
+void copyMemory(void *, const void*, size_t);
 
 #endif // STR_H_INCLUDED
