@@ -38,11 +38,12 @@ int main()
     LinkedList list;
     createList(&list);
     printf("\n%d\n", listIsEmpty(&list));
-    addItem(&list, (void *) 1, sizeof(unsigned));
-    addItem(&list, (void *) 5, sizeof(unsigned));
-    addItem(&list, (void *) 3, sizeof(unsigned));
-    addItem(&list, (void *) 7, sizeof(unsigned));
-    addItem(&list, (void *) 2, sizeof(unsigned));
+    unsigned intAux = 1;
+    addItem(&list, (void *) &intAux, sizeof(unsigned));
+    intAux = 5;
+    addItem(&list, (void *) &intAux, sizeof(unsigned));
+    intAux = 3;
+    addItem(&list, (void *) &intAux, sizeof(unsigned));
 
     return 0;
 }

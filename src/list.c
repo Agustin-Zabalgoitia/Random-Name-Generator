@@ -45,9 +45,6 @@ int getItem(const LinkedList *list, unsigned index, void *dest
 
 int addItem(LinkedList *list, void *data, unsigned dataSize)
 {
-    if(*list == NULL)
-        return IS_NULL;
-
     while(*list)
         list = &(*list)->nextNode;
 
