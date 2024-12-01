@@ -1,8 +1,8 @@
 #ifndef BINARYTREE_H_INCLUDED
 #define BINARYTREE_H_INCLUDED
 
-#include <stdio.h>
 #include <stdlib.h>
+#include "utils.h"
 #include "errorNumbers.h"
 
 #define allocateNodeMemory( X , Y , Z , W ) (                       \

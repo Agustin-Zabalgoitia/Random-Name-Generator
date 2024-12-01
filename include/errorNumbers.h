@@ -4,5 +4,6 @@
 #define OK              100
 #define OUT_OF_MEMORY   110
 #define DUPLICATED_KEY  120
+#define IS_NULL         130
 
 #endif // ERRORNUMBERS_H_INCLUDED

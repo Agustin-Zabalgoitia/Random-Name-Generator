@@ -4,6 +4,7 @@
 #include "../include/fileManager.h"
 #include "../include/str.h"
 #include "../include/binaryTree.h"
+#include "../include/list.h"
 
 void showString(void *str)
 {
@@ -32,6 +33,17 @@ int main()
     //TODO: fix compareString to work with "insertIntoTree"
     insertIntoTree(&tree, name, sizeof(name), compareString);
     printf("%d\n", treeIsEmpty(&tree));
+
+    //Testing list functions
+    LinkedList list;
+    createList(&list);
+    printf("\n%d\n", listIsEmpty(&list));
+    unsigned intAux = 1;
+    addItem(&list, (void *) &intAux, sizeof(unsigned));
+    intAux = 5;
+    addItem(&list, (void *) &intAux, sizeof(unsigned));
+    intAux = 3;
+    addItem(&list, (void *) &intAux, sizeof(unsigned));
 
     return 0;
 }
