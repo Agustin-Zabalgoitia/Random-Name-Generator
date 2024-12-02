@@ -21,6 +21,17 @@ void clearList(LinkedList *list)
     }
 }
 
+unsigned getListSize(const LinkedList *list)
+{
+    unsigned n = 0;
+    while(*list)
+    {
+        n++;
+        list = &(*list)->nextNode;
+    }
+    return n;
+}
+
 int peek(const LinkedList *list, void *dest, unsigned destSize)
 {
     if (*list == NULL)
