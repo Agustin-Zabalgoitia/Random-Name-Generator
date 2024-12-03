@@ -5,6 +5,7 @@
 #include "errorNumbers.h"
 #include "str.h"
 #include "list.h"
+#include "fileManager.h"
 
 /**
 * Given a path, loads a text file to a given list

@@ -6,6 +6,7 @@
 #include "../include/binaryTree.h"
 #include "../include/list.h"
 #include "../include/utils.h"
+#include "../include/nameGenerator.h"
 
 void showString(void *str, void* nothing)
 {
@@ -23,7 +24,8 @@ int main()
 
     //Testing string concatenation
     char name[20];
-    concatenateStrings("A", "gus", name);
+    concatenateStrings("A", name);
+    concatenateStrings("gus", name);
     showString(name, NULL);
 
     //Testing string comparator
@@ -49,10 +51,24 @@ int main()
     addItem(&list, (void *) &intAux, sizeof(unsigned));
 
     //Testing text file to list
-    LinkedList syllables;
-    createList(&syllables);
+    LinkedList firstSyllables;
+    createList(&firstSyllables);
     loadTextFileToList("files/names/spanish/first_syllable_spanish.txt"
-                       , &syllables);
+                       , &firstSyllables);
+
+    LinkedList secondSyllables;
+    createList(&secondSyllables);
+    loadTextFileToList("files/names/spanish/second_syllable_spanish.txt"
+                       , &secondSyllables);
+
+    //Testing name generator
+    LinkedList srcLists;
+    createList(&srcLists);
+    addItem(&srcLists, &firstSyllables, sizeof(LinkedList*));
+    addItem(&srcLists, &secondSyllables, sizeof(LinkedList*));
+    LinkedList dest;
+    createList(&dest);
+    generateName(&srcLists, &dest, 2000);
 
     return 0;
 }

@@ -1,12 +1,18 @@
 #include "../include/str.h"
 
-void concatenateStrings(const char *str1, const char *str2, char *dest )
+void clearString(char *str, unsigned size)
 {
-    while(*str1)
-        *dest++ = *str1++;
+    while(size--)
+        *str++ = '\0';
+}
 
-    while(*str2)
-        *dest++ = *str2++;
+void concatenateStrings(const char *src, char *dest )
+{
+    while(*dest)
+        dest++;
+
+    while(*src)
+        *dest++ = *src++;
 }
 
 int compareString(const char *str1, const char *str2)
@@ -28,6 +34,31 @@ unsigned stringLength(const char *str)
         length++;
 
     return length;
+}
+
+char *createString(unsigned size)
+{
+    char *newString;
+    if( (newString = (char *)malloc(sizeof(char)*size)) == NULL )
+    {
+        free(newString);
+        return NULL;
+    }
+
+    return newString;
+}
+
+void deleteString(char *str)
+{
+    free(str);
+}
+
+void removeCRLF(char *str){
+    while(*str)
+        str++;
+
+    while(*--str == '\r' || *str == '\n')
+        *str = '\0';
 }
 
 void copyMemory(void* dest,const void* src, size_t size)

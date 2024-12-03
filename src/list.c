@@ -21,6 +21,17 @@ void clearList(LinkedList *list)
     }
 }
 
+unsigned getListSize(const LinkedList *list)
+{
+    unsigned n = 0;
+    while(*list)
+    {
+        n++;
+        list = &(*list)->nextNode;
+    }
+    return n;
+}
+
 int peek(const LinkedList *list, void *dest, unsigned destSize)
 {
     if (*list == NULL)
@@ -41,6 +52,17 @@ int getItem(const LinkedList *list, unsigned index, void *dest
 
     copyMemory(dest, (*list)->data, destSize);
     return OK;
+}
+
+unsigned getItemSize(const LinkedList *list, unsigned index)
+{
+    if(*list == NULL)
+        return 0;
+
+    while((*list)->nextNode && (index--)>0)
+        list = &(*list)->nextNode;
+
+    return (*list)->dataSize;
 }
 
 int addItem(LinkedList *list, void *data, unsigned dataSize)
