@@ -54,6 +54,17 @@ int getItem(const LinkedList *list, unsigned index, void *dest
     return OK;
 }
 
+unsigned getItemSize(const LinkedList *list, unsigned index)
+{
+    if(*list == NULL)
+        return 0;
+
+    while((*list)->nextNode && (index--)>0)
+        list = &(*list)->nextNode;
+
+    return (*list)->dataSize;
+}
+
 int addItem(LinkedList *list, void *data, unsigned dataSize)
 {
     while(*list)

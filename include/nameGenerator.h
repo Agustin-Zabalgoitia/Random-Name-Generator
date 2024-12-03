@@ -4,6 +4,7 @@
 #include "list.h"
 #include "str.h"
 #include <stdio.h>
+#include <time.h>
 
 /**
 * @param srcLists: a list containing lists that contains the strings used to

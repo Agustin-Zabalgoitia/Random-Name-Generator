@@ -24,7 +24,8 @@ int main()
 
     //Testing string concatenation
     char name[20];
-    concatenateStrings("A", "gus", name);
+    concatenateStrings("A", name);
+    concatenateStrings("gus", name);
     showString(name, NULL);
 
     //Testing string comparator
@@ -67,7 +68,7 @@ int main()
     addItem(&srcLists, &secondSyllables, sizeof(LinkedList*));
     LinkedList dest;
     createList(&dest);
-    generateName(&srcLists, &dest, 5);
+    generateName(&srcLists, &dest, 2000);
 
     return 0;
 }

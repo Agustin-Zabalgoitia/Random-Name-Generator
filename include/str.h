@@ -9,7 +9,7 @@
 * The behaviour is undefined if dest is not large enough for the contents of
 * both str1 and str2.
 **/
-void concatenateStrings(const char *str1, const char *str2, char *dest);
+void concatenateStrings(const char *src, char *dest);
 /**
 * Compares two given strings.
 * It returns a negative value if str1 appears before str2 in lexografical order.
@@ -21,6 +21,10 @@ int compareString(const char *str1, const char *str2);
 * Returns the length of a given string
 **/
 unsigned stringLength(const char *str);
+void clearString(char *str, unsigned size);
+char *createString(unsigned size);
+void deleteString(char *str);
+void removeCRLF(char *str);
 void copyMemory(void *, const void*, size_t);
 
 #endif // STR_H_INCLUDED

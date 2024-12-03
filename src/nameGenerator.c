@@ -8,18 +8,30 @@ void generateName(const LinkedList *srcLists,
 {
     char strBuffer[STR_BUFFER_SIZE];
     char nameBuffer[NAME_BUFFER_SIZE];
+    srand(time(NULL));
 
-    //Go through every single syllable list and read one random syllable
-    LinkedList currentList;
-    getItem(srcLists, 0, currentList, sizeof(LinkedList*));
+    for(unsigned j = 0 ; j<amountOfNames ; j++)
+    {
+        clearString(nameBuffer, NAME_BUFFER_SIZE);
+        //Go through every single list and read one random string
+        for(unsigned i = 0 ; i<getListSize(srcLists) ; i++)
+        {
+            clearString(strBuffer, STR_BUFFER_SIZE);
 
-    /*
-    getItem( &srcArray[0], getListSize(&srcArray[0]) - 1
-            , strBuffer, sizeof(char)*STR_BUFFER_SIZE);
-    addItem(&dest, strBuffer, sizeof(char)*stringLength(strBuffer));
+            //Get a list
+            LinkedList currentList;
+            createList(&currentList);
+            getItem(srcLists, i, &currentList, sizeof(LinkedList*));
 
-    getItem( &srcArray[1], 1, strBuffer, sizeof(char)*STR_BUFFER_SIZE);
-    addItem(&dest, strBuffer, sizeof(char)*stringLength(strBuffer));
-    */
+            //Get random string
+            unsigned randomNumber = (rand() % getListSize(&currentList));
+            getItem(&currentList, randomNumber
+                    , strBuffer, getItemSize(&currentList, j));
+
+            concatenateStrings(strBuffer,nameBuffer);
+        }
+
+        printf("%s\n", nameBuffer);
+    }
     return;
 }
