@@ -53,12 +53,21 @@ void deleteString(char *str)
     free(str);
 }
 
-void removeCRLF(char *str){
+void removeCRLF(char *str)
+{
     while(*str)
         str++;
 
     while(*--str == '\r' || *str == '\n')
         *str = '\0';
+}
+
+void replaceNullWithCR(char *str)
+{
+    while(*str)
+        str++;
+
+    *str = '\n';
 }
 
 void copyMemory(void* dest,const void* src, size_t size)

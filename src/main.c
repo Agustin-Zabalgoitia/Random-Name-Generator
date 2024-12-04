@@ -53,22 +53,31 @@ int main()
     //Testing text file to list
     LinkedList firstSyllables;
     createList(&firstSyllables);
-    loadTextFileToList("files/names/spanish/first_syllable_spanish.txt"
+    loadTextFileToList("files/names/english/first_syllable_english.txt"
                        , &firstSyllables);
 
     LinkedList secondSyllables;
     createList(&secondSyllables);
-    loadTextFileToList("files/names/spanish/second_syllable_spanish.txt"
+    loadTextFileToList("files/names/english/second_syllable_english.txt"
                        , &secondSyllables);
+
+    LinkedList thirdSyllables;
+    createList(&thirdSyllables);
+    loadTextFileToList("files/names/english/third_syllable_english.txt"
+                       , &thirdSyllables);
 
     //Testing name generator
     LinkedList srcLists;
     createList(&srcLists);
     addItem(&srcLists, &firstSyllables, sizeof(LinkedList*));
     addItem(&srcLists, &secondSyllables, sizeof(LinkedList*));
+    addItem(&srcLists, &thirdSyllables, sizeof(LinkedList*));
     LinkedList dest;
     createList(&dest);
-    generateName(&srcLists, &dest, 2000);
+    generateName(&srcLists, &dest, 100);
+
+    //Testing output file
+    writeListToTextFile("names.txt", &dest);
 
     return 0;
 }
