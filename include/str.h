@@ -25,6 +25,7 @@ void clearString(char *str, unsigned size);
 char *createString(unsigned size);
 void deleteString(char *str);
 void removeCRLF(char *str);
+void replaceNullWithCR(char *str);
 void copyMemory(void *, const void*, size_t);
 
 #endif // STR_H_INCLUDED

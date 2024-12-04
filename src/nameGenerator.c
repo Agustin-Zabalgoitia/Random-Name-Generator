@@ -30,8 +30,8 @@ void generateName(const LinkedList *srcLists,
 
             concatenateStrings(strBuffer,nameBuffer);
         }
-
-        printf("%s\n", nameBuffer);
+        printf("%s\n",nameBuffer);
+        addItem(dest, nameBuffer, stringLength(nameBuffer)+1);
     }
     return;
 }
