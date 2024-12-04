@@ -1,13 +1,12 @@
 #include "../include/nameGenerator.h"
 
-#define STR_BUFFER_SIZE  10
-#define NAME_BUFFER_SIZE 50
+#define NAME_BUFFER_SIZE 255
 
 void generateName(const LinkedList *srcLists,
                   LinkedList *dest, unsigned amountOfNames)
 {
-    char strBuffer[STR_BUFFER_SIZE];
     char nameBuffer[NAME_BUFFER_SIZE];
+    char *strBuffer;
     srand(time(NULL));
 
     for(unsigned j = 0 ; j<amountOfNames ; j++)
@@ -16,8 +15,6 @@ void generateName(const LinkedList *srcLists,
         //Go through every single list and read one random string
         for(unsigned i = 0 ; i<getListSize(srcLists) ; i++)
         {
-            clearString(strBuffer, STR_BUFFER_SIZE);
-
             //Get a list
             LinkedList currentList;
             createList(&currentList);
@@ -25,13 +22,19 @@ void generateName(const LinkedList *srcLists,
 
             //Get random string
             unsigned randomNumber = (rand() % getListSize(&currentList));
+            unsigned strLength = getItemSize(&currentList, randomNumber);
+
+            strBuffer = createString(strLength);
+            clearString(strBuffer, strLength);
             getItem(&currentList, randomNumber
-                    , strBuffer, getItemSize(&currentList, j));
+                    , strBuffer, strLength);
 
             concatenateStrings(strBuffer,nameBuffer);
         }
         printf("%s\n",nameBuffer);
+
         addItem(dest, nameBuffer, stringLength(nameBuffer)+1);
+        deleteString(strBuffer);
     }
     return;
 }

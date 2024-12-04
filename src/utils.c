@@ -7,7 +7,7 @@ void loadTextToList(void *text, void *list)
     unsigned length = stringLength((const char*)text)+1;
     char *newText = createString(length);
     clearString(newText, length);
-    copyMemory(newText, text, length);
+    copyMemory(newText, text, sizeof(char)*length);
 
     addItem((LinkedList *) list, text, sizeof(char)*length);
     deleteString(newText);
