@@ -13,59 +13,27 @@ void showString(void *str, void* nothing)
     printf("%s", (char*) str);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-    //Testing file reader
-    readTextFile("files/names/spanish/first_syllable_spanish.txt"
-                 ,showString, NULL);
-    printf("\n");
-    readTextFile("files/names/spanish/second_syllable_spanish.txt"
-                 ,showString, NULL);
+    //Save text from each file in a different list
+    LinkedList *listFromFile = (LinkedList *)malloc(
+                                                sizeof(LinkedList)*(argc-1));
+    LinkedList *aux = listFromFile;
+    while(*++argv != NULL)
+    {
+        createList(listFromFile);
+        loadTextFileToList(*argv, listFromFile);
+        listFromFile++;
+    }
+    listFromFile = aux;
 
-    //Testing string concatenation
-    char name[20];
-    concatenateStrings("A", name);
-    concatenateStrings("gus", name);
-    showString(name, NULL);
-
-    //Testing string comparator
-    printf("%d\n", compareString("A","A"));
-
-    //Testing tree functions
-    BinaryTree tree;
-    createTree(&tree);
-    printf("%d\n", treeIsEmpty(&tree));
-    //TODO: fix compareString to work with "insertIntoTree"
-    insertIntoTree(&tree, name, sizeof(name), compareString);
-    printf("%d\n", treeIsEmpty(&tree));
-
-    //Testing list functions
-    LinkedList list;
-    createList(&list);
-    printf("\n%d\n", listIsEmpty(&list));
-    unsigned intAux = 1;
-    addItem(&list, (void *) &intAux, sizeof(unsigned));
-    intAux = 5;
-    addItem(&list, (void *) &intAux, sizeof(unsigned));
-    intAux = 3;
-    addItem(&list, (void *) &intAux, sizeof(unsigned));
-
-    //Testing text file to list
-    LinkedList firstSyllables;
-    createList(&firstSyllables);
-    loadTextFileToList("files/names/english/adjective.txt"
-                       , &firstSyllables);
-
-    LinkedList secondSyllables;
-    createList(&secondSyllables);
-    loadTextFileToList("files/names/english/noun.txt"
-                       , &secondSyllables);
-
-    //Testing name generator
+    //Store the lists previously created in a list of lists
     LinkedList srcLists;
     createList(&srcLists);
-    addItem(&srcLists, &firstSyllables, sizeof(LinkedList*));
-    addItem(&srcLists, &secondSyllables, sizeof(LinkedList*));
+    while(--argc>0)
+        addItem(&srcLists, listFromFile++, sizeof(LinkedList*));
+
+    //Generate names and store them in dest
     LinkedList dest;
     createList(&dest);
     generateName(&srcLists, &dest, 100);
