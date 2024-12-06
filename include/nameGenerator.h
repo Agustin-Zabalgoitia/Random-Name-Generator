@@ -12,7 +12,8 @@ generate names
 * @param dest: pointer to a linked list to store the names
 * @param amountOfNames: amount of names to generate and store on dest
 **/
-void generateName( const LinkedList *srcLists,  LinkedList *dest
-                  , unsigned amountOfNames);
+void generateName(const LinkedList *srcLists,
+                  LinkedList *dest, unsigned amountOfNames,
+                  char randomizeLists, char printNames);
 
 #endif // NAMEGENERATOR_H_INCLUDED

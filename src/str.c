@@ -77,3 +77,22 @@ void copyMemory(void* dest,const void* src, size_t size)
     while(size--)
         *d++ = *s++;
 }
+
+int charToInteger(const char ch)
+{
+    return ch - 48;
+}
+
+int stringToInteger(const char *str)
+{
+    const char *init = str;
+    while(*str)
+        str++;
+
+    int number = charToInteger(*(--str));
+
+    for(int i = 10 ; init != str-- ; i*=10)
+        number += (charToInteger(*(str))*i);
+
+    return number;
+}

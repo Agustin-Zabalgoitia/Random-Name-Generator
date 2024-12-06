@@ -3,7 +3,8 @@
 #define NAME_BUFFER_SIZE 255
 
 void generateName(const LinkedList *srcLists,
-                  LinkedList *dest, unsigned amountOfNames)
+                  LinkedList *dest, unsigned amountOfNames,
+                  char randomizeLists, char printNames)
 {
     char nameBuffer[NAME_BUFFER_SIZE];
     char *strBuffer;
@@ -13,7 +14,9 @@ void generateName(const LinkedList *srcLists,
     {
         clearString(nameBuffer, NAME_BUFFER_SIZE);
         //Go through every single list and read one random string
-        for(unsigned i = 0 ; i<getListSize(srcLists) ; i++)
+        unsigned lastList = randomizeLists ? rand() % getListSize(srcLists)
+                            : getListSize(srcLists);
+        for(unsigned i = 0 ; i<lastList ; i++)
         {
             //Get a list
             LinkedList currentList;
@@ -31,7 +34,9 @@ void generateName(const LinkedList *srcLists,
 
             concatenateStrings(strBuffer,nameBuffer);
         }
-        printf("%s\n",nameBuffer);
+
+        if(printNames)
+            printf("%s\n",nameBuffer);
 
         addItem(dest, nameBuffer, stringLength(nameBuffer)+1);
         deleteString(strBuffer);
