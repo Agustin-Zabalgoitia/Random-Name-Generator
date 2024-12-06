@@ -27,5 +27,7 @@ void deleteString(char *str);
 void removeCRLF(char *str);
 void replaceNullWithCR(char *str);
 void copyMemory(void *, const void*, size_t);
+int charToInteger(const char ch);
+int stringToInteger(const char *str);
 
 #endif // STR_H_INCLUDED

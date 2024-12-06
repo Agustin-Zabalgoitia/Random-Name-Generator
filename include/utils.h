@@ -12,5 +12,6 @@
 **/
 void loadTextFileToList(const  char *path, LinkedList *list);
 void writeListToTextFile(const char *filename, LinkedList *list);
+int getOptions(char **argv, const char *options[]);
 
 #endif // UTILS_H_INCLUDED

@@ -40,3 +40,28 @@ void writeListToTextFile(const char *filename, LinkedList *list)
 {
     writeTextFile(filename, writeTextFromList, list);
 }
+
+int getOptions(char **argv, const char **options)
+{
+    if(!*argv || **argv != '-')
+        return 0;
+
+    char isLong = 1;
+    char option = '?';
+
+    if(*++(*argv) != '-')
+        isLong = 0;
+    else
+        *++(*argv);
+
+    while(*options && option == '?')
+    {
+        if( (!isLong && **argv == **options)
+                || (compareString(*argv, *options) == 0) )
+            option = **options;
+
+        options++;
+    }
+
+    return option;
+}
