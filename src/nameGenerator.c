@@ -14,7 +14,7 @@ void generateName(const LinkedList *srcLists,
     {
         clearString(nameBuffer, NAME_BUFFER_SIZE);
         //Go through every single list and read one random string
-        unsigned lastList = randomizeLists ? rand() % getListSize(srcLists)
+        unsigned lastList = randomizeLists ? (rand() % getListSize(srcLists))+1
                             : getListSize(srcLists);
         for(unsigned i = 0 ; i<lastList ; i++)
         {

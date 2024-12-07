@@ -43,7 +43,7 @@
 	"str.h"
 	"errorNumbers.h"
 
-1733423002 /home/tiber/Documents/programming/c/Random-Name-Generator/include/errorNumbers.h
+1733529020 /home/tiber/Documents/programming/c/Random-Name-Generator/include/errorNumbers.h
 
 1733333203 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/fileManager.c
 	"../include/fileManager.h"
@@ -52,13 +52,13 @@
 	<stdlib.h>
 	<stdio.h>
 
-1733508171 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/str.c
+1733529020 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/str.c
 	"../include/str.h"
 
-1733507227 /home/tiber/Documents/programming/c/Random-Name-Generator/include/str.h
+1733529020 /home/tiber/Documents/programming/c/Random-Name-Generator/include/str.h
 	<stdlib.h>
 
-1733512403 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/main.c
+1733529020 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/main.c
 	<stdio.h>
 	<stdlib.h>
 	"../include/fileManager.h"
@@ -68,10 +68,10 @@
 	"../include/utils.h"
 	"../include/nameGenerator.h"
 
-1733505301 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/utils.c
+1733529020 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/utils.c
 	"../include/utils.h"
 
-1733505298 /home/tiber/Documents/programming/c/Random-Name-Generator/include/utils.h
+1733529020 /home/tiber/Documents/programming/c/Random-Name-Generator/include/utils.h
 	<stdlib.h>
 	"errorNumbers.h"
 	"str.h"
@@ -86,10 +86,10 @@
 	"str.h"
 	"errorNumbers.h"
 
-1733512101 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/nameGenerator.c
+1733601168 source:/home/tiber/Documents/programming/c/Random-Name-Generator/src/nameGenerator.c
 	"../include/nameGenerator.h"
 
-1733512114 /home/tiber/Documents/programming/c/Random-Name-Generator/include/nameGenerator.h
+1733529020 /home/tiber/Documents/programming/c/Random-Name-Generator/include/nameGenerator.h
 	"list.h"
 	"str.h"
 	<stdio.h>
