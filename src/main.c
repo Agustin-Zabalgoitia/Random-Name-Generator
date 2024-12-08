@@ -3,7 +3,6 @@
 
 #include "../include/fileManager.h"
 #include "../include/str.h"
-#include "../include/binaryTree.h"
 #include "../include/list.h"
 #include "../include/utils.h"
 #include "../include/nameGenerator.h"
