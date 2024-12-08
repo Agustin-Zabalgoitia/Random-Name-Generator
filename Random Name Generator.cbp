@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="--files /home/tiber/Documents/programming/c/Random-Name-Generator/files/names/spanish/first_syllable_spanish.txt -p" />
+				<Option parameters="--files /home/tiber/Documents/programming/c/Random-Name-Generator/files/names/english/first_syllable_english.txt /home/tiber/Documents/programming/c/Random-Name-Generator/files/names/english/second_syllable_english.txt /home/tiber/Documents/programming/c/Random-Name-Generator/files/names/english/third_syllable_english.txt -p -r" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
