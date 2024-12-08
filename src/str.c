@@ -1,11 +1,5 @@
 #include "../include/str.h"
 
-void clearString(char *str, unsigned size)
-{
-    while(size--)
-        *str++ = '\0';
-}
-
 void concatenateStrings(const char *src, char *dest )
 {
     while(*dest)
@@ -34,6 +28,12 @@ unsigned stringLength(const char *str)
         length++;
 
     return length;
+}
+
+void clearString(char *str, unsigned number)
+{
+    while(number--)
+        *str++ = '\0';
 }
 
 char *createString(unsigned size)
@@ -67,7 +67,7 @@ void replaceNullWithCR(char *str)
     while(*str)
         str++;
 
-    *str = '\n';
+    *str = '\r';
 }
 
 void copyMemory(void* dest,const void* src, size_t size)
