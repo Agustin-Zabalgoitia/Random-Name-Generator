@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="--files /home/tiber/Documents/programming/c/Random-Name-Generator/files/names/english/first_syllable_english.txt /home/tiber/Documents/programming/c/Random-Name-Generator/files/names/english/second_syllable_english.txt /home/tiber/Documents/programming/c/Random-Name-Generator/files/names/english/third_syllable_english.txt -p -r" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -31,7 +32,28 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="include/errorNumbers.h" />
+		<Unit filename="include/fileManager.h" />
+		<Unit filename="include/list.h" />
+		<Unit filename="include/nameGenerator.h" />
+		<Unit filename="include/str.h" />
+		<Unit filename="include/utils.h" />
+		<Unit filename="src/fileManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/nameGenerator.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/str.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/utils.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
