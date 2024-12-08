@@ -32,16 +32,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="include/binaryTree.h" />
 		<Unit filename="include/errorNumbers.h" />
 		<Unit filename="include/fileManager.h" />
 		<Unit filename="include/list.h" />
 		<Unit filename="include/nameGenerator.h" />
 		<Unit filename="include/str.h" />
 		<Unit filename="include/utils.h" />
-		<Unit filename="src/binaryTree.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="src/fileManager.c">
 			<Option compilerVar="CC" />
 		</Unit>
